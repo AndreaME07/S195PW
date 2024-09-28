@@ -1,73 +1,46 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @vite(['resources/js/app.js'])
 
-    <title>Formulario</title>
-</head>
-<body>
-<!--ponemos la navbar-->
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Turista sin Maps</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Registro de clientes</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Consulta de clientes</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    @extends('layouts.plantilla1')
+        @section('titulo','Formulario Clientes')
+        @section('contenido') 
+        <!--al poner una seccion nos ayuda a que es la unica parte que no se va a renderizar
+            por lo tanto nos ayuda a mantener esta parte intacta -->
 
-<!--agregamos la card-->
-<!--formulario-->
-
-<div class="card text-center">
-
-    <div class="card-header">
-        Registro de clientes
-    </div>
-
-    <div class="card-body">
-    <form action="">
-        <div class="mb-3">
-        <label for="nombre" class="form-label">Nombre:</label>
-        <input type="text" class="form-control" id="" >
+    <!--agregamos la card-->
+    <!-- inicia tarjeta con formulario-->
+    <div class="container mt-5 col-md-6">
+      <div class="card font-monospace">
+        <div class="card-header fs-5 text-center text-primary">
+            Registro de clientes
         </div>
 
-        <div class="mb-3">
-        <label for="Apellido" class="form-label">Apellido:</label>
-        <input type="text" class="form-control" id="" >
+        <div class="card-body text-justify">
+            <form>
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre: </label>
+                    <input type="text" class="form-control" id="nombre">
+                </div>
+
+                <div class="mb-3">
+                    <label for="Apellido" class="form-label">Apellido: </label>
+                    <input type="text" class="form-control" id="apellido">
+                </div>
+
+                <div class="mb-3">
+                    <label for="correo" class="form-label">Correo: </label>
+                    <input type="email" class="form-control" id="correo">
+                </div>
+
+                <div class="mb-3">
+                    <label for="telefono" class="form-label">Telefono: </label>
+                    <input type="number" class="form-control" id="telefono">
+                </div>
+                <div class="card-footer text-muted">
+                    <div class="d-grid gap-2 mt-2 mb-1">
+                        <button type="submit" class="btn btn-success btn-sm">Guardar cliente</button>
+                    </div>
+                </form>
+            </div>
         </div>
+        {{-- Finaliza tarjeta con formlario --}}
 
-        <div class="mb-3">
-        <label for="Correo" class="form-label">Correo</label>
-        <input type="mail" class="form-control" id="" >
-        </div>
-
-        <div class="mb-3">
-        <label for="telefono" class="form-label">Telefono</label>
-        <input type="number" class="form-control" id="" >
-        </div>
-
-        </div>
-
-        <div class="card-footer text-body-secondary">
-
-            <button type="submit" class="btn btn-success">Hola</button>
-    </form>
-        </div>
-
-    </div>
-
-</body>
-</html>
+        @endsection
