@@ -9,6 +9,12 @@ Route::get('/',[controladorVistas::class,'home'])->name('rutainicio');
 Route::get('/formulario',[controladorVistas::class,'formulario'])->name('rutaformulario');
 
 Route::get('/clientes',[controladorVistas::class,'consulta'])->name('rutaclientes');
+/*se declara la ruta, despues el tipo de ruta, nombre de la ruta,nombre del controlador,class,nombre del método
+nombre con la que se hace referencia a la ruta*/
+
+Route::post('/enviar',[controladorVistas::class,'procesarCliente'])->name('procesar');
+
+
 
 
 /* Route::get('/', function () {

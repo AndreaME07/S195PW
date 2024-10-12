@@ -20,4 +20,10 @@ class controladorVistas extends Controller
     {
         return view('clientes');
     }
+
+    public function procesarCliente()
+    {
+        return 'Llego tu formulario al controlador';
+    }
+
 }
