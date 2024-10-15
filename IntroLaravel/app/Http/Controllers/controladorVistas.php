@@ -21,9 +21,21 @@ class controladorVistas extends Controller
         return view('clientes');
     }
 
-    public function procesarCliente()
+    public function procesarCliente(Request $peticion )
     {
-        return 'Llego tu formulario al controlador';
+        //return 'Llego tu formulario al controlador';
+        
+        //imprimimos todo lo que viene en la peticion
+        //return $peticion->all();
+
+        //devuelve la ruta de la petición
+        //return $peticion->path();
+
+        // imprime la url complera de la petición
+        //return $peticion->url();
+
+        //muestra la ip origen de la peticion
+        return $peticion->ip();
     }
 
 }

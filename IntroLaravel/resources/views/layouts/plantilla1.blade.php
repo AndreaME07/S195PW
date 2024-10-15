@@ -17,10 +17,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ route('rutaformulario') }}">Registro de clientes</a>
+                        <a class="nav-link {{ request()->routeIS('rutaformulario')?'text-warning':'' }} " aria-current="page" href="{{ route('rutaformulario') }}">Registro de clientes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ route('rutaclientes') }}">Consulta de clientes</a>
+                        <a class="nav-link {{ request()->routeIS('rutaclientes')?'text-danger':'' }} " aria-current="page" href="{{ route('rutaclientes') }}">Consulta de clientes</a>
                     </li>
                 </ul>
             </div>
