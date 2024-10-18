@@ -46,6 +46,7 @@
                 </form>
             </div>
         </div>
+    </div>
         {{-- Finaliza tarjeta con formlario --}}
 
         @endsection
