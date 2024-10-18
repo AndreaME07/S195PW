@@ -1,0 +1,18 @@
+.image-container {
+    display: flex;
+    justify-content: center; /* Centrar para la parte horizontal */
+    align-items: center;     /* Centrar para la parte vertical */         
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.botonr{
+    display: flex;
+    justify-content: center; /* Centrar para la parte horizontal */
+    align-items: center;     /* Centrar para la parte vertical */         
+    margin-top: 25px; /*espacio de la parte de arriba*/
+    margin-bottom: 25px; /*espacio de la parte de abajo*/
+}
+.card-body{
+    background-color: #A9E1FD;
+}
