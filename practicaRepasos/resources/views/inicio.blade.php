@@ -18,8 +18,8 @@
             display: flex;
             justify-content: center; /* Centrar para la parte horizontal */
             align-items: center;     /* Centrar para la parte vertical */         
-            margin-top: 25px;
-            margin-bottom: 25px;
+            margin-top: 25px; /*espacio de la parte de arriba*/
+            margin-bottom: 25px; /*espacio de la parte de abajo*/
         }
     </style>
 </head>
