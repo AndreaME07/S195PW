@@ -23,6 +23,7 @@ class controladorVistas extends Controller
 
     public function procesarCliente(Request $peticion )
     {
+        
         //return 'Llego tu formulario al controlador';
         
         //imprimimos todo lo que viene en la peticion
