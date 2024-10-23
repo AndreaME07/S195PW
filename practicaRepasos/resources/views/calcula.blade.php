@@ -17,15 +17,15 @@
                     @csrf
                     <div class="mb-3 ">
                         <label for="mb" class="form-label">MB: </label>
-                        <input type="text" class="form-control" name="txtmb">
+                        <input type="number" class="form-control" name="txtmb">
                     </div>
                     <div class="mb-3">
                         <label for="gb" class="form-label">GB: </label>
-                        <input type="text" class="form-control" name="txtgb">
+                        <input type="number" class="form-control" name="txtgb">
                     </div>
                     <div class="mb-3">
                         <label for="tb" class="form-label">TB: </label>
-                        <input type="text" class="form-control" name="txttb">
+                        <input type="number" class="form-control" name="txttb">
                     </div>
             <div class="d-flex align-items-center mt-3">
                 <label for="conversionS" ></label>

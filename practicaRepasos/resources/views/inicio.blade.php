@@ -12,7 +12,7 @@
             <img src="{{ asset('images/logo.png') }}" alt="Logo upq" width="180" height="180" >
         </div>
 
-        <p style="text-align: center;" class="fs-5">Universidad Politécnica de Querétaro</p>
+        <p style="text-align: center;" class="fs-3">Universidad Politécnica de Querétaro</p>
         <p style="text-align: center;" class="fs-5">Ingeniería en Sistemas Computacionales</p>
         <p style="text-align: center;" class="fs-5">Programación Web</p>
         <p style="text-align: center;" class="fs-5">Repaso Laravel 1</p>
