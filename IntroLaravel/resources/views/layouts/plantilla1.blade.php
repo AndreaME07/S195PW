@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite(['resources/js/app.js'])
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
     <title> @yield('titulo')</title>
 </head>
 <body>
@@ -17,10 +19,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIS('rutaformulario')?'text-warning':'' }} " aria-current="page" href="{{ route('rutaformulario') }}">Registro de clientes</a>
+                        <a class="nav-link {{ request()->routeIS('rutaformulario')?'text-warning':'' }} " aria-current="page" href="{{ route('rutaformulario') }}"> {{__('Registro clientes')}} </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIS('rutaclientes')?'text-danger':'' }} " aria-current="page" href="{{ route('rutaclientes') }}">Consulta de clientes</a>
+                        <a class="nav-link {{ request()->routeIS('rutaclientes')?'text-danger':'' }} " aria-current="page" href="{{ route('rutaclientes') }}"> {{__('Consulta clientes')}} </a>
                     </li>
                 </ul>
             </div>
