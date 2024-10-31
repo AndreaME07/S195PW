@@ -1,8 +1,7 @@
 
     @extends('layouts.plantilla1')
         @section('titulo','Formulario Clientes')
-        @section('contenido') 
-        <!--al poner una seccion nos ayuda a que es la unica parte que no se va a renderizar
+        @section('contenido')<!--al poner una seccion nos ayuda a que es la unica parte que no se va a renderizar
             por lo tanto nos ayuda a mantener esta parte intacta -->
 
     <!--agregamos la card-->
