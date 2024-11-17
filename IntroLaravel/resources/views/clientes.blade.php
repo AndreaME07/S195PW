@@ -4,19 +4,22 @@
 
     {{-- inicia tarjeta de cliente --}}
     <div class="container mt-5 col-md-8">
-        <div class="card text-justify ">
+        @foreach ($consultaClientes as $cliente)
+
+        <div class="card text-justify font-monospace mt-3">
             <div class="card-header fs-5 text-primary">
-                Andrea Alicia Medina Everardo
+                {{ $cliente->nombre}}
             </div>
         <div clas="card-body">
-            <h5 class="fw-bold text-justify">andrea.medina@gmail.com</h5>
-            <h5 class="fw-bold text-justify">4422653410</h5>
+            <h5 class="fw-bold text-justify mx-2"> {{$cliente->correo}} </h5>
+            <h5 class="fw-bold text-justify mx-2">{{$cliente->telefono}}</h5>
             <p class="card-text fw-lighter"></p>
         </div>
         <div class="card-footer text-muted">
             <button type="submit" class="btn btn-warning btn-sm"> {{__('Actualizar')}} </button>
             <button type="submit" class="btn btn-danger btn-sm"> {{__('Eliminar')}} </button>
         </div>
-        </div>
-    </div>
+        </div>{{--Termina div de tarjeta--}}
+        @endforeach
+    </div>{{--  divcontainer --}}
 @endsection

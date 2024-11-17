@@ -1,19 +1,29 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\controladorVistas;
+use App\Http\Controllers\clienteController;
 
 #Rutas para trabajar con un controlador
-Route::get('/',[controladorVistas::class,'home'])->name('rutainicio');
 
-Route::get('/formulario',[controladorVistas::class,'formulario'])->name('rutaformulario');
+/*Rutas controlador Vistas*/ 
 
-Route::get('/clientes',[controladorVistas::class,'consulta'])->name('rutaclientes');
+
+
 /*se declara la ruta, despues el tipo de ruta, nombre de la ruta,nombre del controlador,class,nombre del método
 nombre con la que se hace referencia a la ruta*/
 
-Route::post('/enviar',[controladorVistas::class,'procesarCliente'])->name('procesar');
 
+
+/*Rutas de ClienteController*/ 
+Route::get('/',[clienteController::class,'home'])->name('rutainicio');
+
+Route::get('/cliente/create',[clienteController::class,'create'])->name('rutaformulario');
+
+Route::post('/cliente',[clienteController::class,'store'])->name('procesar');
+
+Route::get('/clientes',[clienteController::class,'index'])->name('rutaclientes');
 
 
 

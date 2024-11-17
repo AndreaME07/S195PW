@@ -7,13 +7,14 @@
     <!--agregamos la card-->
     <!-- inicia tarjeta con formulario-->
     <div class="container mt-5 col-md-6">
-        @if (session('exito'))
+        {{-- ctrl + } para comentar de jalon --}}
+        {{-- @if (session('exito')) 
         <x-Alert tipo="warning">{{ session('exito')}} </x-Alert>
         @endif
 
         @session('exito')
             <x-Alert tipo="warning">{{ $value }} </x-Alert>
-        @endsession
+        @endsession --}}
 
         @session('exito')
         <script>
@@ -32,32 +33,32 @@
 
         <div class="card-body text-justify">
 <!-- Recuerda que en action se pone el nombre de la ruta-->
-            <form action="/enviar" method="POST" >
+            <form action="{{ route('procesar') }}" method="POST" >
 
                 <!--LLave de paso para envios por post -->
                 @csrf
 
                 <div class="mb-3">
                     <label for="nombre" class="form-label">{{__('Nombre')}} </label>
-                    <input type="text" class="form-control" name="txtnombre">
+                    <input type="text" class="form-control" name="txtnombre" value="{{ old('txtnombre')}}">
                     <small class="text-danger fst-italic"> {{ $errors->first('txtnombre') }} </small>
                 </div>
 
                 <div class="mb-3">
                     <label for="Apellido" class="form-label">{{__('Apellidos')}} </label>
-                    <input type="text" class="form-control" name="txtapellido">
+                    <input type="text" class="form-control" name="txtapellido" value="{{ old('txtnombre')}}" >
                     <small class="text-danger fst-italic"> {{ $errors->first('txtapellido') }} </small>
                 </div>
 
                 <div class="mb-3">
                     <label for="correo" class="form-label">{{__('Correo')}}</label>
-                    <input type="text" class="form-control" name="txtcorreo">
+                    <input type="text" class="form-control" name="txtcorreo" value="{{ old('txtnombre')}}">
                     <small class="text-danger fst-italic"> {{ $errors->first('txtcorreo') }} </small>
                 </div>
 
                 <div class="mb-3">
                     <label for="telefono" class="form-label">{{__('Telefono')}}</label>
-                    <input type="text" class="form-control" name="txttelefono">
+                    <input type="text" class="form-control" name="txttelefono" value="{{ old('txtnombre')}}">
                     <small class="text-danger fst-italic"> {{ $errors->first('txttelefono') }} </small>
                 </div>
                 <div class="card-footer text-muted">
