@@ -25,6 +25,16 @@
             });
         </script>
         @endsession
+
+        @session('error')
+        <script>
+            Swal.fire({
+            title: "Upsss...",
+            text: '{{ $value }}',
+            icon: "error"
+            });
+        </script>
+        @endsession
       
         <div class="card font-monospace">
         <div class="card-header fs-5 text-center text-primary">

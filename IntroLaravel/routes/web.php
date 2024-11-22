@@ -25,7 +25,11 @@ Route::post('/cliente',[clienteController::class,'store'])->name('procesar');
 
 Route::get('/clientes',[clienteController::class,'index'])->name('rutaclientes');
 
+Route::get('/cliente/editar',[clienteController::class,'edit'])->name('editarcliente');
 
+Route::post('/cliente/actualizar',[clienteController::class,'update'])->name('actualizarCliente');
+
+Route::post('/cliente/eliminar',[clienteController::class,'deleteclient'])->name('eliminarCliente');
 
 /* Route::get('/', function () {
     return view('welcome');

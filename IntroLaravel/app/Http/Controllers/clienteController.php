@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\validadorCliente;
+use App\Models\Clientes;
 use Illuminate\Support\Facades\DB;
 //manejo de hora y fechas
 use Carbon\Carbon;
@@ -19,7 +20,7 @@ class clienteController extends Controller
      */
     public function index()
     {
-        $consultaClientes= DB::table('clientes')->get();
+        $consultaClientes= Clientes::orderBy('id','desc')->get();
         return view('clientes',compact('consultaClientes'));
     }
 
@@ -36,7 +37,15 @@ class clienteController extends Controller
      */
     public function store(validadorCliente $request)
     {
-        DB::table('clientes')->insert([
+        // Validar que el campo seleccionado no exista en la base de datos ---------//
+        // $validar = Clientes::select('telefono')->where('telefono', $request->txttelefono)->count();
+
+        // if($validar > 0){
+        //     session()->flash('error','El número de telefono ya existe, por favor intenta con otro');
+        //     return back();
+        // }
+
+        Clientes::create([
             'nombre'=>$request->input('txtnombre'),
             'apellido'=>$request->input('txtapellido'),
             'correo'=>$request->input('txtcorreo'),
@@ -62,24 +71,46 @@ class clienteController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit()
     {
-        //
+        
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        //
+        $validate = $request->validate([
+            'txtnombre' => 'required|string|max:255',
+            'txtapellido' => 'required|string|max:255',
+            'txtcorreo' => 'required|string|max:255',
+            'txttelefono' => 'required|numeric'
+        ]);
+
+        $upd_cliente = Clientes::where('id', $request->txtid)->update([
+            'nombre' => $request->txtnombre,
+            'apellido' => $request->txtapellido,
+            'correo' => $request->txtcorreo,
+            'telefono' => $request->txttelefono
+        ]);
+
+        session()->flash('exito','Se actualizo el cliente: '. $request->txtnombre);
+
+        return to_route ('rutaclientes');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function deleteclient(Request $request)
     {
-        //
+        // dd($request->all());
+        $dt_cliente = Clientes::where('id', $request->idcliente)->delete();
+        session()->flash('exito','Se borro el cliente exitosamente ');
+
+        return to_route ('rutaclientes');
     }
+
+
 }
