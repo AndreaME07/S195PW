@@ -25,7 +25,7 @@
                         @csrf
                         <div class="mb-3">
                             <label for="nombre" class="form-label">{{ __('ID Cliente') }} </label>
-                            <input type="text" readonly style="background-color: gray; color:white " class="form-control"
+                            <input type="text" style="background-color: gray; color:white " class="form-control"
                                 name="txtid" value="{{ old('txtid') }}">
                             <small class="text-danger fst-italic"> {{ $errors->first('txtid') }} </small>
                         </div>

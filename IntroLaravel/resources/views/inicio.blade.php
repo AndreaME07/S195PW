@@ -20,7 +20,7 @@
     <h1 class="display1"> {{__('Bienvenido Turista!')}} </h1>
     <p> {{__('Presiona el botón para iniciar...')}} </p>
 
-    <a href="{{route('rutaformulario') }}" class="btn btn-primary">Ir al registro</a>
+    <a href="#"" class="btn btn-primary">Ir al registro</a>
 
    </div>
 </body>
